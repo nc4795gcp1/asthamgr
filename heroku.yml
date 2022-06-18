@@ -2,4 +2,4 @@ build:
   docker:
     web: Dockerfile
 run:
-  web: CMD ["./usr/share/manager-server/start.sh"]
+  web: ./usr/share/manager-server/start.sh
