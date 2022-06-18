@@ -17,3 +17,4 @@ RUN chmod +x /usr/share/manager-server/start.sh
 EXPOSE 80
 ENV app_user nikhil
 CMD ["./usr/share/manager-server/start.sh"]
+#
