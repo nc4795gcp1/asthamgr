@@ -16,4 +16,4 @@ COPY start.sh /usr/share/manager-server/start.sh
 RUN chmod +x /usr/share/manager-server/start.sh
 #EXPOSE $PORT
 ENV PORT=$PORT
-CMD ["./usr/share/manager-server/start.sh"]
+#CMD ["./usr/share/manager-server/start.sh"]
