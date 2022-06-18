@@ -14,6 +14,6 @@ RUN systemctl start manager-server
 RUN systemctl enable --now manager-server
 COPY start.sh /usr/share/manager-server/start.sh
 RUN chmod +x /usr/share/manager-server/start.sh
-EXPOSE $PORT
-ENV app_user nikhil
+#EXPOSE $PORT
+ENV PORT=$PORT
 CMD ["./usr/share/manager-server/start.sh"]
