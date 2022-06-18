@@ -1,6 +1,4 @@
 FROM ubuntu
-RUN apt-get update
-RUN apt-get upgrade -y
-RUN apt-get install apache2 -y
-COPY ./index.html /var/www/html/index.html
-ENV Port=$PORT
+COPY start.sh /usr/share/manager-server/start.sh
+RUN chmod +x /usr/share/manager-server/start.sh
+CMD ["./usr/share/manager-server/start.sh"]
