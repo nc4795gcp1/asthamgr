@@ -8,7 +8,7 @@ RUN apt-get install systemctl -y
 RUN mkdir /usr/share/manager-server
 RUN wget https://github.com/Manager-io/Manager/releases/latest/download/ManagerServer-linux-x64.tar.gz -O /usr/share/manager-server/ManagerServer-linux-x64.tar.gz
 RUN tar xvzf /usr/share/manager-server/ManagerServer-linux-x64.tar.gz -C /usr/share/manager-server
-RUN printf "[Unit]\nAfter=network.target\n\n[Service]\nLimitNOFILE=1048576\nExecStart=/bin/bash /usr/share/manager-server/ManagerServer -port 80\nRestart=on-failure\nStartLimitInterval=600\n\n[Install]\nWantedBy=multi-user.target" | sudo tee /etc/systemd/system/manager-server.service
+RUN printf "[Unit]\nAfter=network.target\n\n[Service]\nLimitNOFILE=1048576\nExecStart=/bin/sh /usr/share/manager-server/ManagerServer -port 80\nRestart=on-failure\nStartLimitInterval=600\n\n[Install]\nWantedBy=multi-user.target" | sudo tee /etc/systemd/system/manager-server.service
 RUN systemctl daemon-reload
 RUN systemctl start manager-server
 RUN systemctl enable --now manager-server
