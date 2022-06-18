@@ -1,8 +1,6 @@
 build:
   docker:
     web: Dockerfile
-    worker: worker/Dockerfile
 release:
-  image: worker
   command:
     - ./usr/share/manager-server/start.sh
